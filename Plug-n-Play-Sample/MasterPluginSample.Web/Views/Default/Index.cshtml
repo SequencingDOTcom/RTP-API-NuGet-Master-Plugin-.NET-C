@@ -1,0 +1,143 @@
+﻿@model Sequencing.MasterPluginSample.Web.Models.CommonData
+@{
+    ViewBag.Title = "Select file";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="/Scripts/jquery-2.1.3.js"></script>
+<script src="/Scripts/jquery-ui-1.11.2.min.js"></script>
+
+
+<div id="selectFile">
+    @using (Html.BeginForm("SelectFile", "Default"))
+            {
+        <div style="margin-bottom: 5px; margin-top: 60px;" class="form-group">
+            <div class="col-sm-12 controls">
+            </div>
+        </div>
+                <button id="continueButton" type="submit">Select Generic file</button>
+    }
+</div>
+
+
+
+<div id="continueChain9">
+    @using (Html.BeginForm("GetAppChainResult", "Default", new { appCode = "Chain9", dataFileId = @Model.Context.DataFileId }))
+    {
+        <div style="margin-bottom: 5px; margin-top: 60px;" class="form-group">
+            <div class="col-sm-12 controls">
+            </div>
+        </div>
+                        <button id="continueButton" type="submit">Get Melanoma risk</button>
+    }
+</div>
+
+<div id="continueChain88">
+    @using (Html.BeginForm("GetAppChainResult", "Default", new { appCode = "Chain88", dataFileId = @Model.Context.DataFileId }))
+    {
+        <div style="margin-bottom: 5px; margin-top: 60px;" class="form-group">
+        </div>
+        <button id="continueButton" type="submit">Get vitamin D</button>
+    }
+</div>
+
+<div id="TextError">
+    @if (!string.IsNullOrEmpty(@ViewBag.Error))
+            {
+        <h4><b> @ViewBag.Error</b></h4>
+    }
+</div>
+
+
+
+
+
+<div id="continueBoth">
+    @using (Html.BeginForm("GetAppChainResult", "Default", new { appCode = "Both", dataFileId = @Model.Context.DataFileId }))
+    {
+        <div style="margin-bottom: 5px; margin-top: 60px;" class="form-group">
+            <div class="col-sm-12 controls">
+                <input type="hidden" id="SelectedId" name="selectedId" />
+                <input type="hidden" id="SelectedName" name="selectedName" />
+            </div>
+        </div>
+                <button id="continueButton" type="submit">Melanoma risk + vitamin D</button>
+    }
+</div>
+
+<div id="TextChain9">
+    @if (!string.IsNullOrEmpty(@ViewBag.MelanomaRisk))
+            {
+        <h4><b>Melanoma risk result (Chain9): @ViewBag.MelanomaRisk</b></h4>
+    }
+</div>
+
+<div id="TextChain88">
+    @if (!string.IsNullOrEmpty(@ViewBag.VitaminD))
+            {
+        <h4><b>VitaminD result (Chain88): @ViewBag.VitaminD</b></h4>
+    }
+</div>
+
+
+<style>
+    img.rsz {
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+    #TextChain88 {
+        position: absolute;
+        width: auto;
+        left: 20%;
+        top: 60%;
+        text-align: center;
+    }
+
+    #TextChain9 {
+        position: absolute;
+        width: auto;
+        left: 20%;
+        top: 50%;
+        text-align: center;
+    }
+
+    #TextError {
+        position: absolute;
+        width: auto;
+        left: 5%;
+        top: 50%;
+        text-align: center;
+    }
+
+    #continueChain9 {
+        position: absolute;
+        width: auto;
+        left: 1%;
+        top: 20%;
+        text-align: center;
+    }
+
+    #continueChain88 {
+        position: absolute;
+        width: auto;
+        left: 60%;
+        top: 20%;
+        text-align: center;
+    }
+
+    #selectFile {
+        position: absolute;
+        width: auto;
+        left: 25%;
+        top: 10%;
+        text-align: center;
+    }
+
+    #continueBoth {
+        position: absolute;
+        width: auto;
+        left: 5%;
+        top: 30%;
+        text-align: center;
+    }
+</style>
