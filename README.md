@@ -52,12 +52,12 @@ To implement this Master Plugin for your app:
 5) Configure your app based on each [app chain's possible responses](https://sequencing.com/app-chains/)
 
 6) Set up ClientId, ClientSecret, Scope and RedirectUri in Master-plugin sample Web.config:
-  * find <appSettings> section
-  * replace with your values
-    <add key="OAuthAppId" value="APP_ID" />
-    <add key="OAuthSecret" value="APP_SECRET" />
-    <add key="REDIRECT_URI" />
-    <add key="OAuthScope" value="test" />
+    * find appSettings section
+    * replace with your values
+       add key="OAuthAppId" value="APP_ID"
+       add key="OAuthSecret" value="APP_SECRET"
+       add key="REDIRECT_URI"
+       add key="OAuthScope" value="test"
 
 
 Master NuGet Plugin install
