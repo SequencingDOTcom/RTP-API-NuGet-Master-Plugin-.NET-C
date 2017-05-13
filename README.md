@@ -1,6 +1,8 @@
 # Master Visual Studio NuGet Plugin for adding Sequencing.com's Real-Time Personalization (+RTP) technology to .NET/C# apps
 This Master NuGet Plugin can be used to quickly add [Real-Time Personalization (+RTP)](https://sequencing.com/developer-documentation/what-is-real-time-personalization-rtp) to your app. This Master Plugin contains a customizable, end-to-end plug-n-play solution that quickly adds all necessary code (OAuth2, File Selector and App Chain coding) to your app.
 
+This NuGet Plugin can also be added here: https://www.nuget.org/packages/Sequencing-Master-Plugin/2.0.0.6
+
 Once this Master Plugin is added to your app all you'll need to do is:
 
 1. add your [OAuth2 secret](https://sequencing.com/developer-center/new-app-oauth-secret)
